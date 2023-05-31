@@ -9,14 +9,18 @@ import {
   NbFormFieldModule,
   NbIconModule,
   NbInputModule,
+  NbLayoutScrollService,
+  NbListModule,
   NbMenuModule,
   NbMenuService,
   NbProgressBarModule,
   NbRadioModule,
   NbSearchModule,
   NbSearchService,
+  NbSelectModule,
   NbSidebarModule,
   NbSidebarService,
+  NbTabsetModule,
   NbToastrModule,
   NbToastrService,
   NbToggleModule,
@@ -44,7 +48,10 @@ import {
     NbToggleModule,
     NbCheckboxModule,
     NbFormFieldModule,
-    NbProgressBarModule
+    NbProgressBarModule,
+    NbSelectModule,
+    NbTabsetModule,
+    NbListModule,
   ],
   exports: [
     NbSidebarModule,
@@ -64,14 +71,18 @@ import {
     NbToggleModule,
     NbCheckboxModule,
     NbFormFieldModule,
-    NbProgressBarModule
+    NbProgressBarModule,
+    NbSelectModule,
+    NbTabsetModule,
+    NbListModule,
   ],
   providers: [
     NbSidebarService,
     NbMenuService,
     NbSearchService,
     NbToastrService,
-    NbDialogService
+    NbDialogService,
+    NbLayoutScrollService,
   ],
 })
 export class NebularModule {}

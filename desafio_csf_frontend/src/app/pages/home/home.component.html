@@ -1,21 +1,714 @@
 <div class="row">
-  <div class="col">
-    <nb-card>
-      <nb-card-header>
-        <h5 style="float: left;">Lista</h5>
-        <button style="float: right;" nbButton>Novo</button>
-        <span style="float: right; margin-right: 10px; padding: 0 5px;">
-          <button nbButton ghost nbTooltip="Limpar Filtro">
-            <nb-icon icon="close" pack="eva"></nb-icon>
-          </button>
-          <nb-search type="rotate-layout" hint="Aperte ENTER para pesquisar ou ESC para cancelar"
-            placeholder="Pesquisar" nbTooltip="Pesquisar"></nb-search>
-        </span>
-      </nb-card-header>
+  <div class="col-md-3">
+    <div class="row">
+      <nb-card class="col">
+        <nb-card-header>
+          Caixa
+        </nb-card-header>
+        <nb-card-body *ngIf="!caixaAberto">
+          O caixa não está aberto.
+        </nb-card-body>
+        <nb-card-body *ngIf="caixaAberto">
+          <h5>Troco: <br>{{troco | currency:'BRL'}}</h5>
+          <h5>Saldo: <br>{{saldo | currency:'BRL'}}</h5>
+          <h5>Total: <br>{{troco + saldo | currency:'BRL'}}</h5>
+        </nb-card-body>
+        <nb-card-footer>
+          <button *ngIf="!caixaAberto" nbButton status="success">Abrir Caixa</button>
+          <button *ngIf="caixaAberto" nbButton status="danger">Fechar Caixa</button>
+        </nb-card-footer>
+      </nb-card>
+    </div>
+    <div class="row">
+      <nb-card class="col" style="height: 40vh;">
+        <nb-card-header>
+          Produtos sem Estoque
+        </nb-card-header>
+        <nb-card-body>
+          <nb-list nbInfiniteList [threshold]="500">
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+            <nb-list-item>
+              produto 1
+            </nb-list-item>
+            <nb-list-item>
+              produto 2
+            </nb-list-item>
+            <nb-list-item>
+              produto 3
+            </nb-list-item>
+            <nb-list-item>
+              produto 4
+            </nb-list-item>
+          </nb-list>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
 
+  <div class="col-md-8 offset-md-1">
+    <nb-card>
       <nb-card-body>
-        TEST
+        <nb-tabset (changeTab)="onChangeTab($event)">
+          <nb-tab tabTitle="Vendas" style="height: 68vh;">
+            <nb-list nbInfiniteList [threshold]="500">
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+            </nb-list>
+          </nb-tab>
+          <nb-tab tabTitle="Compras" style="height: 68vh;">
+            <nb-list nbInfiniteList [threshold]="500">
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+              <nb-list-item>
+                transação 1
+              </nb-list-item>
+              <nb-list-item>
+                transação 2
+              </nb-list-item>
+              <nb-list-item>
+                transação 3
+              </nb-list-item>
+              <nb-list-item>
+                transação 4
+              </nb-list-item>
+              <nb-list-item>
+                transação 5
+              </nb-list-item>
+              <nb-list-item>
+                transação 6
+              </nb-list-item>
+              <nb-list-item>
+                transação 7
+              </nb-list-item>
+            </nb-list>
+          </nb-tab>
+          <nb-tab tabTitle="Estoque" style="height: 68vh;">
+            <nb-list nbInfiniteList [threshold]="500">
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+              <nb-list-item>
+                produto 1
+              </nb-list-item>
+              <nb-list-item>
+                produto 2
+              </nb-list-item>
+              <nb-list-item>
+                produto 3
+              </nb-list-item>
+              <nb-list-item>
+                produto 4
+              </nb-list-item>
+            </nb-list>
+          </nb-tab>
+        </nb-tabset>
       </nb-card-body>
+      <nb-card-footer>
+        <button nbButton status="success" *ngIf="activeTab == 'Vendas'">Nova Venda</button>
+        <button nbButton status="success" *ngIf="activeTab == 'Compras'">Nova Compra</button>
+        <button nbButton status="success" *ngIf="activeTab == 'Estoque'">Novo Produto</button>
+      </nb-card-footer>
     </nb-card>
   </div>
 </div>
