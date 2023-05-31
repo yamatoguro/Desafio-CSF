@@ -46,7 +46,7 @@ public class CaixaController {
     }
 
     @Operation(summary = "Recuperar informação de todos os Caixas")
-    @GetMapping
+    @GetMapping(path = "/todos")
     @ResponseStatus(value = HttpStatus.OK)
     public List<Caixa> getCaixas() {
         return service.getCaixas();
